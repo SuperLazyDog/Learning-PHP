@@ -25,5 +25,60 @@
       ?>
       </pre>
     </span>
+
+    <div class="section3">
+      <h3>session 3</h3>
+      <p>if</p>
+      <?php $a = 1 ?>
+      <?php if ($a >= 1){?>
+        <p>a >= 1</p>
+      <?php }else if ($a === 0) {?>
+        <p>a = 0</p>
+      <?php} else {?>
+        <p>a < 0</p>
+      <?php } ?>
+
+      <?php if ($a >= 1):?>
+        <p>a >= 1</p>
+      <?php elseif ($a === 0): ?>
+        <p>a = 0</p>
+      <?php else: ?>
+        <p>a < 0</p>
+      <?php endif ?>
+      <p>switch</p>
+      <p>while</p>
+      <p>do-while</p>
+      <p>for</p>
+    </div>
+
+    <div class="section4">
+      <h3>函数</h3>
+      <div>
+        <?php
+        for ($i=0; $i < 10; $i++) {
+          $num = mt_rand(100, 200);
+          echo $num . "<br/>";
+        }
+        ?>
+      </div>
+      <?php
+      $a = "this is global";
+      function sample(int $a, float $b, $c):bool {
+        static $sample;
+        global $a;
+        echo $a;
+        return "sa";
+      }
+      sample(1, 2, 3);
+      echo "<br/>123";
+      $test = function ($x=0) use($a) {
+        echo "a: ".$a;
+      };
+      $test();
+      $a = "after";
+      echo "<br/>123";
+      $test();
+      ?>
+    </div>
   </body>
 </html>
